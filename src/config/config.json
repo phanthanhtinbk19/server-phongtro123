@@ -6,6 +6,7 @@
 		"host": "dpg-chlkgb67avj217dreoqg-a.singapore-postgres.render.com",
 		"port": 5432,
 		"dialect": "postgres",
+
 		"logging": false,
 		"pool": {
 			"max": 20,
