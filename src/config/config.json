@@ -1,0 +1,49 @@
+{
+	"development": {
+		"username": "db_phongtro123_ok0m_user",
+		"password": "oYkTQMMKlwBGSjZuazLsLN7BPDWareWR",
+		"database": "db_phongtro123_ok0m",
+		"host": "dpg-chlkgb67avj217dreoqg-a.singapore-postgres.render.com",
+		"port": 5432,
+		"dialect": "postgres",
+		"logging": false,
+		"pool": {
+			"max": 20,
+			"min": 0,
+			"acquire": 60000,
+			"idle": 10000
+		},
+		"dialectOptions": {
+			"ssl": {
+				"require": true,
+				"rejectUnauthorized": false
+			}
+		},
+		"query": {
+			"raw": true
+		},
+		"timezone": "+07:00"
+	},
+	"test": {
+		"username": "root",
+		"password": "oYkTQMMKlwBGSjZuazLsLN7BPDWareWR",
+		"database": "database_test",
+		"host": "dpg-chlkgb67avj217dreoqg-a.singapore-postgres.render.com",
+		"dialect": "postgres"
+	},
+	"production": {
+		"username": "db_phongtro123_ok0m_user",
+		"password": "oYkTQMMKlwBGSjZuazLsLN7BPDWareWR",
+		"database": "db_phongtro123_ok0m",
+		"host": "dpg-chlkgb67avj217dreoqg-a.singapore-postgres.render.com",
+		"port": 5432,
+		"logging": false,
+		"dialect": "postgres",
+		"dialectOptions": {
+			"ssl": {
+				"require": true,
+				"rejectUnauthorized": false
+			}
+		}
+	}
+}
