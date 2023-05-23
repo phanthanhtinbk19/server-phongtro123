@@ -2,7 +2,8 @@ import {Op} from "sequelize";
 import db from "../models";
 import {v4 as uuidv4} from "uuid";
 import generateCode from "../utils/generateCode";
-import moment from "moment/moment";
+import moment from "moment";
+
 import {generateCreatedDate, generateExpireDate} from "../utils/generateDate";
 const getPostsService = ({
 	page,
@@ -15,14 +16,21 @@ const getPostsService = ({
 	...rest
 }) =>
 	new Promise(async (resolve, reject) => {
-		console.log(order_by);
 		try {
 			const pageNumber = +page || 1;
+
 			const limit = process.env.LIMIT;
 			const queries = {...rest};
-			if (priceTo) queries.priceNumber = {[Op.between]: [priceTo, priceFrom]};
-			if (areaTo) queries.areaNumber = {[Op.between]: [areaTo, areaFrom]};
-			if (categoryCode) queries.categoryCode = categoryCode;
+			if (priceTo)
+				queries.priceNumber = {
+					[Op.between]: [priceTo, +priceTo === 15 ? 999999 : +priceTo],
+				};
+			if (areaTo)
+				queries.areaNumber = {
+					[Op.between]: [areaTo, +areaTo === 90 ? 999999 : +areaTo],
+				};
+			if (categoryCode && categoryCode !== "ALL")
+				queries.categoryCode = categoryCode;
 
 			const posts = await db.Post.findAndCountAll({
 				where: queries,
@@ -255,7 +263,9 @@ const getPrivatePostsService = (userId) =>
 			const posts = await db.Post.findAll({
 				raw: true,
 				nest: true,
-				where: {userId},
+				where: {
+					userId,
+				},
 				include: [
 					{
 						model: db.Image,

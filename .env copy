@@ -1,0 +1,12 @@
+PORT =8080
+NODE_ENV=development
+ACCESS_TOKEN_SECRET = tinphancr7
+REFRESH_TOKEN_SECRET = tinphancr77
+URL_REACT=https://client-phongtro123-o3gkc5ne9-phanthanhtinbk19.vercel.app
+LIMIT=10
+DB_HOST=dpg-chlkgb67avj217dreoqg-a.singapore-postgres.render.com
+DB_NAME=db_phongtro123_ok0m
+DB_USERNAME=db_phongtro123_ok0m_user
+DB_PASSWORD=oYkTQMMKlwBGSjZuazLsLN7BPDWareWR
+DB_PORT=5432
+DB_DIALECT=postgres
