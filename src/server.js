@@ -18,12 +18,6 @@ app.use(cookieParser());
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
 app.use(express.json());
-app.use("/api", (req, res, next) => {
-	res.send("Hello World!");
-});
-// let browser = startBrowser();
-
-// scrapeInstance(browser);
 
 const port = process.env.PORT || 5000;
 
