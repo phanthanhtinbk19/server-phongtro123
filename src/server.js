@@ -9,11 +9,12 @@ import bodyParser from "body-parser";
 
 dotenv.config();
 
-app.use(
-	cors({
-		origin: process.env.URL_REACT,
-	})
-);
+app.use(cors());
+// app.use(
+// 	cors({
+// 		origin: process.env.URL_REACT,
+// 	})
+// );
 app.use(cookieParser());
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true}));
